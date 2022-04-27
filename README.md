@@ -8,8 +8,8 @@ This is a solution to the [Single price grid component challenge on Frontend Men
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontendmentor solution page](https://www.frontendmentor.io/solutions/single-price-grid-component-BygV0GDr9)
+- Live Site URL: [GitHub Pages site](https://karolbanat.github.io/single-price-grid-component/)
 
 ## Author
 
