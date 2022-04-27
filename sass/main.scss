@@ -1,0 +1,225 @@
+:root {
+	//colors
+	--clr-primary-700: hsl(179, 62%, 43%);
+	--clr-primary-400: hsl(71, 73%, 54%);
+	--clr-primary-300: hsl(179, 47%, 52%);
+
+	--clr-neutral-300: hsl(218, 22%, 67%);
+	--clr-neutral-500: hsl(204, 43%, 93%);
+
+	--clr-white: hsl(0, 0%, 100%);
+
+	--clr-shadow: hsla(0, 0%, 0%, 0.2);
+
+	// font families
+	--ff-primary: 'Karla', sans-serif;
+
+	//padding
+	--margin-100: 1rem;
+	--margin-200: 1.5rem;
+	--margin-300: 2rem;
+	--margin-400: 2.5rem;
+	--margin-500: 3rem;
+
+	--padding-100: 1em;
+	--padding-200: 1.25em;
+	--padding-300: 1.5em;
+	--padding-400: 1.75em;
+	--padding-500: 2em;
+	--padding-600: 2.25em;
+	--padding-700: 2.5em;
+	--padding-800: 2.75em;
+	--padding-900: 4.5em;
+
+	//stage
+	--body: var(--clr-white);
+	--bg-body: var(--clr-neutral-500);
+
+	--bg-header: var(--clr-white);
+	--heading-primary: var(--clr-primary-700);
+	--subtitle: var(--clr-primary-400);
+	--header-text: var(--clr-neutral-300);
+
+	--bg-subscription: var(--clr-primary-700);
+	--text-accent: var(--clr-neutral-500);
+	--bg-button: var(--clr-primary-400);
+	--button: var(--clr-white);
+
+	--bg-about: var(--clr-primary-300);
+	--list: var(--clr-neutral-500);
+
+	--borr: 6px;
+}
+
+// RESEt
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: var(--ff-primary);
+	color: var(--body);
+	background-color: var(--bg-body);
+	line-height: 1;
+
+	@media (min-width: 35em) {
+		--borr: 8px;
+	}
+}
+
+ul {
+	list-style: none;
+}
+
+// MAIN CSS
+main {
+	display: grid;
+	place-content: center;
+	padding: var(--padding-900) var(--padding-500);
+	min-height: 100vh;
+}
+
+h1 {
+	margin-bottom: var(--margin-400);
+	font-size: 2rem;
+	color: var(--heading-primary);
+
+	@media (min-width: 39.75em) {
+		font-size: 2.4rem;
+	}
+}
+
+h2 {
+	margin-bottom: var(--margin-300);
+	font-size: 1.8rem;
+}
+
+// price-grid
+.price-grid {
+	max-width: 39.75em;
+
+	@media (min-width: 35em) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		filter: drop-shadow(0 8px 16px var(--clr-shadow));
+
+		& *:first-child {
+			grid-column: span 2;
+		}
+	}
+
+	&__header {
+		padding: var(--padding-600) var(--padding-300);
+		background-color: var(--clr-white);
+		border-radius: var(--borr) var(--borr) 0 0;
+
+		@media (min-width: 39.75em) {
+			padding: var(--padding-800) var(--padding-700);
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: var(--margin-400);
+		font-weight: 600;
+		color: var(--subtitle);
+
+		@media (min-width: 39.75em) {
+			margin-bottom: var(--margin-100);
+			font-size: 1.8rem;
+		}
+	}
+
+	&__text {
+		line-height: 1.6;
+		color: var(--header-text);
+
+		@media (max-width: 39.75em) {
+			font-size: 1.4rem;
+			line-height: 1.8;
+		}
+	}
+}
+
+// subscription
+.subscription {
+	padding: var(--padding-400) var(--padding-300);
+	background-color: var(--bg-subscription);
+
+	@media (min-width: 39.75em) {
+		padding: var(--padding-800) var(--padding-700);
+	}
+
+	@media (min-width: 35em) {
+		border-bottom-left-radius: var(--borr);
+	}
+
+	&__price-container {
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--margin-200);
+
+		& p {
+			font-weight: 300;
+			color: var(--text-accent);
+		}
+	}
+
+	&__price {
+		margin-right: var(--margin-100);
+		font-size: 3rem;
+		font-weight: 700;
+	}
+
+	&__btn {
+		--borr: 6px;
+
+		display: block;
+		padding: var(--padding-100);
+		margin-top: var(--margin-500);
+
+		font-weight: 700;
+		text-align: center;
+		text-decoration: none;
+		color: var(--button);
+
+		background-color: var(--bg-button);
+		border-radius: var(--borr);
+		box-shadow: 0 6px 16px var(--clr-shadow);
+
+		transition: transform 0.35s ease;
+
+		&:hover {
+			transform: scale(0.9);
+		}
+	}
+}
+
+// about
+.about {
+	padding: var(--padding-400) var(--padding-300);
+	background-color: var(--bg-about);
+	border-radius: 0 0 var(--borr) var(--borr);
+
+	@media (min-width: 39.75em) {
+		padding: var(--padding-800) var(--padding-700);
+	}
+
+	@media (min-width: 35em) {
+		border-bottom-left-radius: 0;
+	}
+
+	&__list-item {
+		font-size: 1.4rem;
+		line-height: 1.4;
+		color: var(--list);
+	}
+}
